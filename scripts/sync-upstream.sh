@@ -38,8 +38,8 @@ cat - "$UPSTREAM_PSTACK/README.md" > "$REPO_ROOT/README.md" <<'HEADER'
 > ```
 >
 > **What this port adapts automatically:**
-> 1. **Antigravity Plugin Manifest ([`plugin.json`](./plugin.json)):** Generates a valid Antigravity plugin bundle with all 54 skills and 2 subagents (`poteto-agent` and `comment-sicko`).
-> 2. **Frontmatter Normalization (`skills/*/SKILL.md`):** Strips Cursor-only YAML frontmatter keys (`disable-model-invocation: true`, `icon`, `color`, `paths`) and normalizes `name` to kebab-case so Antigravity exposes the skills in `<skills>` and all 54 skills pass Codex's `quick_validate.py`.
+> 1. **Antigravity Plugin Manifest ([`plugin.json`](./plugin.json)):** Generates a valid Antigravity plugin bundle with all bundled skills and subagents (`poteto-agent` and `comment-sicko`).
+> 2. **Frontmatter Normalization (`skills/*/SKILL.md`):** Strips Cursor-only YAML frontmatter keys (`disable-model-invocation: true`, `icon`, `color`, `paths`) and normalizes `name` to kebab-case so Antigravity exposes the skills in `<skills>` and all skills pass Codex's `quick_validate.py`.
 > 3. **Subagent Capabilities ([`agents/poteto-agent.md`](./agents/poteto-agent.md)):** Equips `poteto-agent` with Antigravity write/command tools, `inheritMcp: true`, `preloadSkills: [poteto-mode]`, and cross-agent lookup paths (`~/.gemini/config/plugins/pstack/skills/` and `~/.codex/skills/`).
 > 4. **Cross-Agent Model Defaults ([`config/pstack-models.mdc`](./config/pstack-models.mdc)):** Configures `inherit-parent` across all roles so subagents in Antigravity and Codex inherit the active session model cleanly.
 
